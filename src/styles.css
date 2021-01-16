@@ -1,0 +1,112 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+
+.label-width {
+    width: 25%;
+    margin-left: 15px;
+}
+
+.form-width{
+    width: 100%;
+    margin-left: 15px;
+}
+
+.form-field{
+    width:50%;
+}
+
+.row-field{
+    display: inline;
+    margin: -4px -4px;
+}
+
+.form-group{
+    margin: -4px -4px;
+    width: 100% !important;
+}
+
+.tbl-cell{
+    width:16%;
+}
+
+.tbl-cell-edit{
+    width: 10%;
+}
+
+td, th {
+    border: 1px solid;
+}
+
+nav flex-column{
+    float: left;
+    width:30%;
+}
+
+.main-content{
+    float: left;
+    width:100%;
+    padding-left: -400px;
+    margin-left: -500px;
+}
+
+.outer-containe{
+    margin: 0 auto;
+}
+
+.inputForm{
+    border-radius:5px;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+ }
+
+ .create-form{
+     background-color: #add8e6;
+ }
+
+.w30{
+    width: 30%;
+    padding-right: 10px;
+    margin-right: -140px;
+}
+.w60{
+    width: 60%;
+    padding-right: 10px;
+    margin-right: -140px;
+}
+.w80{
+    width: 80%;
+    padding-right: 1px;
+    margin-right: -100px;
+}
+.w100{
+    width: 70%;
+    padding-right: 1px;
+    margin-right: -100px;
+}
+
+body{
+    margin: 10px 10px 10px 10px;
+}
+
+.btn-margin{
+    margin-right: 13px !important;
+    margin-bottom: 13px !important;
+    width: 10% ;
+}
+.search-bar{
+    width:50%;
+}
+.search-button{
+    width: 20%;;
+}
+html, body { height: 100%; }
+body { margin: 18px; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+h3{
+    color: #72bcd4;
+    font-weight: bold;
+}
+
+.title{
+    color: #007bff;
+}
