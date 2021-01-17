@@ -1,119 +1,102 @@
-
- <div class="row">
-    <div class="">
+<div class="container row">
+   <div class="col-sm-2">
       <img src="assets/images/alianza-logo-small.png" alt="alianza-logo">
       <br><br>
       <i class="far fa-user" style="color:#007bff; padding-left: 18px; margin-right: 5px; margin-bottom: 10px; font-size: 38px;"></i><span style="color:#007bff;font-size: 30px;">Clients</span>
-        <ul class="nav flex-column">
-            <li class="nav-item">
-               <a class="nav-link active" href="#">Client</a>
-            </li>
-            <li class="nav-item">
-               <a class="nav-link" href="#">Client look history</a>
-            </li>
-            <li class="nav-item">
-               <a class="nav-link" href="#">Emergency PIN configuration</a>
-            </li>
-            <li class="nav-item">
-               <a class="nav-link" href="#">Emergency PIN history</a>
-            </li>
-         </ul>
-    </div>
+<nav class="sidenav-1">
+   <ul class="sidenav-menu">
+      <li class="sidenav-item">Clients</li>
+      <li>Client look history</li>
+      <li>Emergency PIN configuration</li>
+      <li>Emergency PIN history</li>
+   </ul>
+</nav>
+</div>
 
-    
-        <div class="w100">
-            <div class="form-width">
-                <button type="button" class="btn btn-primary btn-margin">
-                   <i class="fa fa-plus" aria-hidden="true"></i> New
-                  </button> 
-                
-                <button type="button" class="btn btn-primary btn-margin">
-                  <i class="fas fa-file-export"></i>Export
-               </button>
-                
+<div id="contenido" class="col-sm-10">
+   <div>
+      <h3 class="title">Clients</h3>
+   </div>
+
+   <div class="form-width col">
+      <button type="button" class="btn btn-primary" (click)="open(createClientModal)">
+         <i class="fa fa-plus" aria-hidden="true"></i> New
+        </button> 
+      
+      <button type="button" class="btn btn-primary">
+        <i class="fas fa-file-export"></i>Export
+     </button>
+      
+  </div>
+
+  <div class="form-width">
+      <form class="d-flex w60">
+         <input class="form-control me-2 search-bar" type="search" placeholder="Enter shared key" aria-label="Search">
+         <button class="btn btn-outline-secondary" type="submit">Search</button>
+         
+         <button class="btn btn-primary">Advanced Search</button>
+      </form>
+   </div>
+
+   <table style="width: 100%;">
+      <thead>
+        <tr>
+           <th class="tbl-cell">Shared Key</th>
+           <th class="tbl-cell">Bussines ID</th>
+           <th class="tbl-cell">E-mail</th>
+           <th class="tbl-cell">Phone</th>
+           <th class="tbl-cell">Data Added</th>
+           <th class="tbl-cell-edit">Edit</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let client of clientList">
+            <td>{{client.name}}</td>
+            <td>{{client.phone}}</td>
+            <td>{{client.email}}</td>
+            <td>{{client.startDate}}</td>
+            <td>{{client.endDate}}</td>
+            <td></td>
+        </tr>
+    </tbody>
+   </table>
+
+   <ng-template #createClientModal>
+      <div class="form-width create-form">
+         <form class="form-horizontal">
+            <div class="inputForm">
+               <div class="form-inline">
+                  <label for="Name" class="label-width">Name</label>
+                  <input type="text" class="form-control" id="inputName">
+               </div>
             </div>
+            <div class="inputForm">
+               <div class="form-inline">
+                  <label for="inputPhone" class="label-width">Phone</label>
+                  <input type="text" class="form-control" id="inputPhone">
+               </div>
+            </div>
+            <div class="inputForm">
+               <div class="form-inline">
+                  <label for="inputMaill" class="label-width">E-mail</label>
+                  <input type="email" class="form-control" id="inputMail">
+               </div>
+            </div>
+            <div class="inputForm">
+               <div class="form-inline">
+                  <label for="startDate" class="label-width">Start date</label>
+                  <input type="text" class="form-control" id="startDate">
+               </div>
+            </div>
+            <div class="inputForm">
+               <div class="form-inline">
+                  <label for="endDate" class="label-width">End Date</label>
+                  <input type="text" class="form-control" id="endDate">
+               </div>
+            </div>
+            <button type="button" class="btn btn-primary">OK</button>
+         </form>
+      </div>
+</ng-template>
 
-            <div class="form-width">
-                <form class="d-flex w60">
-                   <input class="form-control me-2 search-bar" type="search" placeholder="Enter shared key" aria-label="Search">
-                   <button class="btn btn-outline-secondary btn-margin search-button" type="submit">Search</button>
-                   
-                   <button class="btn btn-primary btn-margin search-button">Advanced Search</button>
-                </form>
-             </div>
-            
-             <ng-template #createClientModal>
-                 <div class="form-width create-form">
-                    <form>
-                       <div class="inputForm">
-                          <div class="row-field">
-                             <label for="Name" class="label-width">Name</label>
-                             <input type="text" class="form-control" id="inputName">
-                          </div>
-                       </div>
-                       <div class="inputForm">
-                          <div class="row-field">
-                             <label for="inputPhone" class="label-width">Phone</label>
-                             <input type="text" class="form-control" id="inputPhone">
-                          </div>
-                       </div>
-                       <div class="inputForm">
-                          <div class="row-field">
-                             <label for="inputMaill" class="label-width">E-mail</label>
-                             <input type="email" class="form-control" id="inputMail">
-                          </div>
-                       </div>
-                       <div class="inputForm">
-                          <div class="row-field">
-                             <label for="startDate" class="label-width">Start date</label>
-                             <input type="text" class="form-control" id="startDate">
-                          </div>
-                       </div>
-                       <div class="inputForm">
-                          <div class="row-field">
-                             <label for="endDate" class="label-width">End Date</label>
-                             <input type="text" class="form-control" id="endDate">
-                          </div>
-                       </div>
-                       <button type="button" class="btn btn-primary">OK</button>
-                    </form>
-                 </div>
-    </ng-template>
-        
-             <br />
-             <div>
-                <h3 class="title">Clients</h3>
-             </div>
-             <div id="main-content" class="w80">
-                <table style="width: 100%;">
-                   <thead>
-                     <tr>
-                        <th class="tbl-cell">Shared Key</th>
-                        <th class="tbl-cell">Bussines ID</th>
-                        <th class="tbl-cell">E-mail</th>
-                        <th class="tbl-cell">Phone</th>
-                        <th class="tbl-cell">Data Added</th>
-                        <th class="tbl-cell-edit">Edit</th>
-                     </tr>
-                   </thead>
-                   <tbody>
-                     <tr *ngFor="let client of clientList">
-                         <td>{{client.name}}</td>
-                         <td>{{client.phone}}</td>
-                         <td>{{client.email}}</td>
-                         <td>{{client.startDate}}</td>
-                         <td>{{client.endDate}}</td>
-                         <td></td>
-                     </tr>
-                 </tbody>
-                </table>
-             </div>
-    </div>
-
- 
- 
- </div>
- 
- 
- 
- 
+</div>
