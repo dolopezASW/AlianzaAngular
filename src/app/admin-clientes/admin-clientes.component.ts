@@ -3,6 +3,8 @@ import { ClientService } from '../services/client.service';
 import { Client } from 'src/app/models/client';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import {NgbModal, ModalDismissReasons, NgbModalOptions} from '@ng-bootstrap/ng-bootstrap';
+import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+
 
 @Component({
   selector: 'app-admin-clientes',
@@ -16,8 +18,16 @@ export class AdminClientesComponent implements OnInit {
 
   closeResult: string='';
   modalOptions:NgbModalOptions;
+
+  createFormGroup = this.fb.group({
+    name: new FormControl('', Validators.required),
+    phone: new FormControl('', Validators.required),
+    email: new FormControl('', Validators.required),
+    startDate: new FormControl('', Validators.required),
+    endDate: new FormControl('', Validators.required)
+  });
   
-  constructor(private clientService: ClientService, private modalService: NgbModal) {
+  constructor(private clientService: ClientService, private modalService: NgbModal, private fb: FormBuilder) {
     this.modalOptions = {
       backdrop:'static',
       backdropClass:'customBackdrop'
@@ -50,6 +60,16 @@ export class AdminClientesComponent implements OnInit {
     } else {
       return  `with: ${reason}`;
     }
+  }
+
+  createClient(){
+    console.log('Creating client...');
+    let clientTmp: Client = new Client(this.createFormGroup.get('name')?.value,this.createFormGroup.get('phone')?.value,this.createFormGroup.get('email')?.value,this.createFormGroup.get('startDate')?.value,this.createFormGroup.get('endDate')?.value);
+    this.clientService.createClient(clientTmp).subscribe(res=>{
+      if(res!=null && res!=undefined){
+        this.clientList.push(res);
+      }
+    })
   }
 
 }

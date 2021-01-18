@@ -7,9 +7,10 @@ import { AppComponent } from './app.component';
 import { AdminClientesComponent } from './admin-clientes/admin-clientes.component';
 
 import { ClientService } from 'src/app/services/client.service';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { ModalModule } from 'ngx-bootstrap/modal';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -20,9 +21,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule,
+    NgbModule,
+    ReactiveFormsModule
   ],
   providers: [ClientService],
   bootstrap: [AppComponent]

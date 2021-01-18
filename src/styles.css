@@ -90,8 +90,9 @@ body{
 
 .btn-margin{
     margin-right: 13px !important;
-    margin-bottom: 13px !important;
-    width: 10% ;
+}
+.div-margin{
+    margin-bottom: 33px;
 }
 .search-bar{
     width:50%;
@@ -99,6 +100,21 @@ body{
 .search-button{
     width: 20%;;
 }
+.form-section{
+    margin-bottom: 20px;
+}
+ul {
+    list-style-type: none;
+   }
+@media screen and(max-width: 640px){
+    .search-bar{
+        width:20%;
+    }
+    .search-button{
+        width: 10%;;
+    }
+}
+
 html, body { height: 100%; }
 body { margin: 18px; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
@@ -109,4 +125,7 @@ h3{
 
 .title{
     color: #007bff;
+}
+form{
+    padding-top: 10%;
 }
