@@ -126,6 +126,10 @@ h3{
 .title{
     color: #007bff;
 }
+.label-error{
+    color: red;
+    margin-left: 140px;
+}
 form{
     padding-top: 10%;
 }

@@ -70,7 +70,7 @@
                   <label for="name" class="label-width">Name</label>
                   <input type="text" class="form-control" id="name" formControlName="name">
                </div>
-               <div><span *ngIf="createFormGroup.controls['name'].invalid">Name is required</span></div>
+               <div><span class="label-error"  *ngIf="createFormGroup.controls['name'].invalid">Name is required</span></div>
             </div>
             
             <div>
@@ -78,7 +78,7 @@
                   <label for="phone" class="label-width">Phone</label>
                   <input type="text" class="form-control" id="phone" formControlName="phone">
                </div>
-               <div><span *ngIf="createFormGroup.controls['phone'].invalid">Phone is required</span></div>
+               <div><span class="label-error"  *ngIf="createFormGroup.controls['phone'].invalid">Phone is required</span></div>
             </div>
 
             <div class="form-section">
@@ -86,7 +86,7 @@
                   <label for="inputMaill" class="label-width">E-mail</label>
                   <input type="email" class="form-control" id="inputMail" formControlName="email">
                </div>
-               <div><span *ngIf="createFormGroup.controls['email'].invalid">Email is required</span></div>
+               <div><span class="label-error"  *ngIf="createFormGroup.controls['email'].invalid">Email is required</span></div>
             </div>
 
             <div class="form-section">
@@ -95,7 +95,7 @@
                   <i class="fa fa-calendar" aria-hidden="true"></i>
                   <input type="text" class="form-control" id="startDate" formControlName="startDate">
                </div>
-               <div><span *ngIf="createFormGroup.controls['startDate'].invalid">startDate is required</span></div>
+               <div><span class="label-error"  *ngIf="createFormGroup.controls['startDate'].invalid">startDate is required</span></div>
             </div>
 
             <div class="form-section">
@@ -104,7 +104,7 @@
                   <i class="fa fa-calendar" aria-hidden="true"></i>
                   <input type="text" class="form-control" id="endDate" formControlName="endDate">
                </div>
-               <div><span *ngIf="createFormGroup.controls['endDate'].invalid">endDate is required</span></div>
+               <div><span class="label-error" *ngIf="createFormGroup.controls['endDate'].invalid">endDate is required</span></div>
             </div>
             <button type="button" class="btn btn-primary" (click)="createClient()">OK</button>
          </form>
